@@ -30,8 +30,7 @@ export default {
           }
         },
         {
-          dataField: 'saldo',
-          caption: 'Saldo Atual',
+          dataField: 'saldo_inicial',
           dataType: 'number',
           format: {
             type: 'fixedPoint',

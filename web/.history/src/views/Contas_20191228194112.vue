@@ -28,15 +28,6 @@ export default {
             type: 'fixedPoint',
             precision: 2
           }
-        },
-        {
-          dataField: 'saldo',
-          caption: 'Saldo Atual',
-          dataType: 'number',
-          format: {
-            type: 'fixedPoint',
-            precision: 2
-          }
         }
       ]
     },

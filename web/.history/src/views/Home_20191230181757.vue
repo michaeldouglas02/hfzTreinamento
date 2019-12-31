@@ -2,14 +2,14 @@
   <div class="home">
     <v-content>
       <v-row>
-        <app-agenda-pagamentos/>
+        <dash-agenda-pagamento />
       </v-row>
       <v-row>
         <v-col cols="4">
-          <app-grafico-contas />
+          <dash-grafico-contas />
         </v-col>
         <v-col>
-          <app-grafico-gastos />
+          <dash-grafico-gasto-fornecedor />
         </v-col>
       </v-row>
     </v-content>

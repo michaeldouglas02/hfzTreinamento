@@ -31,7 +31,7 @@ export default {
         },
         {
           dataField: 'saldo',
-          caption: 'Saldo Atual',
+          caption: 'Saldo Atual'
           dataType: 'number',
           format: {
             type: 'fixedPoint',

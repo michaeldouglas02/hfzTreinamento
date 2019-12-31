@@ -22,16 +22,7 @@ export default {
           dataField: 'descricao'
         },
         {
-          dataField: 'saldo_inicial',
-          dataType: 'number',
-          format: {
-            type: 'fixedPoint',
-            precision: 2
-          }
-        },
-        {
           dataField: 'saldo',
-          caption: 'Saldo Atual',
           dataType: 'number',
           format: {
             type: 'fixedPoint',

@@ -2,7 +2,7 @@
   <div class="home">
     <v-content>
       <v-row>
-        <app-agenda-pagamentos/>
+        <h1>teste</h1>
       </v-row>
       <v-row>
         <v-col cols="4">

@@ -74,14 +74,6 @@ export default new Vuex.Store({
           commit('setGraficoGastoFornecedor', res.data)
           return res.data
         }
-      ),
-    loadAgendaPagamentos: ({ commit }) => axios
-      .get('/financeiro/titulos/agenda/')
-      .then(
-        res => {
-          commit('setAgendaPagamentos', res.data.map(m => ({ ...m, startDate: new Date(m.startDate) })))
-          return res.data
-        }
       )
   },
 

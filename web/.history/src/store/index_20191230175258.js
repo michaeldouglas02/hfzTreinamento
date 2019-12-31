@@ -10,9 +10,7 @@ export default new Vuex.Store({
     contas: [],
     titulos: [],
     titulosPendentes: [],
-    graficoSaldoContas: [],
-    graficoGastoFornecedor: [],
-    agendaPagamentos: []
+    graficoSaldoContas: []
   },
   mutations: {
     setFornecedores (state, lista) {
@@ -29,12 +27,6 @@ export default new Vuex.Store({
     },
     setGraficoSaldoContas (state, lista) {
       state.graficoSaldoContas = lista
-    },
-    setGraficoGastoFornecedor (state, lista) {
-      state.graficoGastoFornecedor = lista
-    },
-    setAgendaPagamentos (state, lista) {
-      state.agendaPagamentos = lista
     }
   },
   actions: {
@@ -57,34 +49,17 @@ export default new Vuex.Store({
       .get('/financeiro/titulos/pendentes/')
       .then(res => {
         commit('setTitulosPendentes', res.data)
-      }),
-    loadGraficoSaldoContas: ({ commit }) => axios
-      .get('/financeiro/contas/')
-      .then(
-        res => {
-          const data = res.data.map(m => ({ arg: m.descricao, val: m.saldo }))
-          commit('setGraficoSaldoContas', data)
-          return data
-        }
-      ),
-    loadGraficoGastoFornecedor: ({ commit }) => axios
-      .get('/financeiro/fornecedores/gastos/')
-      .then(
-        res => {
-          commit('setGraficoGastoFornecedor', res.data)
-          return res.data
-        }
-      ),
-    loadAgendaPagamentos: ({ commit }) => axios
-      .get('/financeiro/titulos/agenda/')
-      .then(
-        res => {
-          commit('setAgendaPagamentos', res.data.map(m => ({ ...m, startDate: new Date(m.startDate) })))
-          return res.data
-        }
-      )
+      })
   },
-
+  loadGraficoSaldoContas: ({ commit }) => axios
+    .get('/financeiro/contas/')
+    .then(
+      res => {
+        const data = res.data.map(m => ({ arg: m.descricao, val: m.saldo }))
+        commit('setGraficoSaldoContas', data)
+        return data
+      }
+    ),
   modules: {
   }
 })
