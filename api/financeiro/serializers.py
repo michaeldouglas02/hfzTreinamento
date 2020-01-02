@@ -9,6 +9,12 @@ class FornecedorSerializer(serializers.ModelSerializer):
 
 
 class ContaSerializer(serializers.ModelSerializer):
+    saldo = serializers.DecimalField(
+        max_digits=15,
+        decimal_places=2,
+        read_only=True
+    )
+
     class Meta:
         model = Conta
         fields = '__all__'
@@ -30,8 +36,14 @@ class TituloSerializer(serializers.ModelSerializer):
         read_only=True
     )
 
+    detalhe_pagamentos = serializers.SerializerMethodField('_detalhe_pagamentos')
+
     def _fornecedor(self, obj: Titulo):
         return FornecedorSerializer(obj.fornecedor).data
+
+    def _detalhe_pagamentos(self, obj: Titulo):
+        pagamentos = obj.pagamento_set.all()
+        return PagamentoSerializer(pagamentos, many=True).data
 
     class Meta:
         model = Titulo
