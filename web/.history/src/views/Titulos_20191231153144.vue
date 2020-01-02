@@ -4,7 +4,7 @@
       :mostrar="mostrarPagamento"
       :tituloSelecionado="tituloSelecionado"
       @fechar="fecharPagamento"
-
+      mestre-detalhe="app-detalhe-pagamento"
     />
     <app-crud
       ref="grid"
@@ -15,7 +15,6 @@
       :acoes="acoes"
       :masterDetail="true"
       @selecionou="tituloSelecionado = $event"
-      mestre-detalhe="app-detalhe-pagamento"
     />
   </div>
 </template>

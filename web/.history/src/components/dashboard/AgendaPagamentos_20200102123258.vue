@@ -3,9 +3,8 @@
     :data-source="$store.state.agendaPagamentos"
     :current-date="currentDate"
     :views="views"
-    :height="400"
-    :width="800"
-    :start-day-hour="9"
+    :height="600"
+    :start-day-hour="0"
     current-view="agenda"
     >
 

@@ -4,7 +4,7 @@ import TituloPagamento from '@/components/titulos/Pagamento.vue'
 import GraficoContas from '@/components/dashboard/GraficoContas.vue'
 import GraficoGastos from '@/components/dashboard/GraficoGastos.vue'
 import AgendaPagamentos from '@/components/dashboard/AgendaPagamentos.vue'
-import DetalhePagamento from '@/components/titulos/DetalhesMestre.vue'
+import DetalhePagamento from '@/components/dashboard/DetalhePagamento.vue'
 
 Vue.component('app-crud', Crud)
 Vue.component('app-titulo-pagamento', TituloPagamento)

@@ -3,8 +3,7 @@
     :data-source="$store.state.agendaPagamentos"
     :current-date="currentDate"
     :views="views"
-    :height="400"
-    :width="800"
+    :height="600"
     :start-day-hour="9"
     current-view="agenda"
     >
@@ -43,7 +42,7 @@ export default {
         {
           text: 'Vencimentos',
           id: 2,
-          color: 'tomato'
+          color: 'red'
         }
       ]
     }

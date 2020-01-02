@@ -65,8 +65,8 @@ export default {
       default: () => []
     },
     mestreDetalhe: {
-      type: String,
-      default: null
+      type: Object,
+      default: () => []
     }
   },
   data () {

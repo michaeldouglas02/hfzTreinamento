@@ -9,8 +9,19 @@
     :show-borders="true"
     :on-toolbar-preparing="toolbarPreparing"
     @selection-changed="onSelectionChanged"
+    :hover-state-enabled="true"
+    :row-alternation-enabled="true"
+    :column-auto-width="true"
+    :height="500"
   >
-     <DxMasterDetail
+    <DxPager
+      :allowed-page-sizes="[5, 10, 15]"
+      :show-page-size-selector="true"
+      :show-info="true"
+    />
+    <DxPaging :page-size="10" />
+
+    <DxMasterDetail
       :enabled="mestreDetalhe !== null"
       template="mestreDetalheTemplate"
     />
@@ -20,16 +31,23 @@
         :dados="data"
       />
     </template>
+
   </DxDataGrid>
 </template>
 
 <script>
-import { DxDataGrid, DxMasterDetail } from 'devextreme-vue/data-grid'
+import DxDataGrid, {
+  DxPager,
+  DxPaging,
+  DxMasterDetail
+} from 'devextreme-vue/data-grid'
 import CustomStore from 'devextreme/data/custom_store'
 import notify from 'devextreme/ui/notify'
 export default {
   components: {
     DxDataGrid,
+    DxPager,
+    DxPaging,
     DxMasterDetail
   },
   props: {
@@ -109,9 +127,7 @@ export default {
     },
     toolbarPreparing (grid) {
       let toolbarItems = grid.toolbarOptions.items
-
       this.acoes.forEach(a => toolbarItems.unshift(a))
-
       toolbarItems.unshift({
         location: 'after',
         widget: 'dxButton',
@@ -130,7 +146,7 @@ export default {
         key: 'id',
         load: async options => {
           if (this.carregarDados) {
-            await this.carregarDados()
+            this.carregarDados()
           }
           let dados = []
           try {

@@ -4,7 +4,7 @@
     :current-date="currentDate"
     :views="views"
     :height="400"
-    :width="800"
+    :width="900"
     :start-day-hour="9"
     current-view="agenda"
     >

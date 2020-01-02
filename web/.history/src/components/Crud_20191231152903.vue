@@ -27,12 +27,17 @@
 import { DxDataGrid, DxMasterDetail } from 'devextreme-vue/data-grid'
 import CustomStore from 'devextreme/data/custom_store'
 import notify from 'devextreme/ui/notify'
+import DetailTemplate from '../views/MeusPagamentos'
 export default {
   components: {
     DxDataGrid,
-    DxMasterDetail
+    DxMasterDetail,
+    DetailTemplate
   },
   props: {
+    masterDetail: {
+      type: Boolean
+    },
     url: {
       type: String,
       required: true
@@ -63,10 +68,6 @@ export default {
     acoes: {
       type: Array,
       default: () => []
-    },
-    mestreDetalhe: {
-      type: String,
-      default: null
     }
   },
   data () {

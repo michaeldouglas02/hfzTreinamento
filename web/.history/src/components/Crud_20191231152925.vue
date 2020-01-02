@@ -33,6 +33,9 @@ export default {
     DxMasterDetail
   },
   props: {
+    masterDetail: {
+      type: Boolean
+    },
     url: {
       type: String,
       required: true
@@ -63,10 +66,6 @@ export default {
     acoes: {
       type: Array,
       default: () => []
-    },
-    mestreDetalhe: {
-      type: String,
-      default: null
     }
   },
   data () {
