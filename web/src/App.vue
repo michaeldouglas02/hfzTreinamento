@@ -44,7 +44,10 @@
       </v-toolbar-title>
       <v-spacer />
       <v-btn icon  >
-        <v-icon>mdi-help-circle</v-icon>
+        <v-icon>mdi-account-box</v-icon>
+      </v-btn>
+      <v-btn icon  >
+        <v-icon>mdi-logout</v-icon>
       </v-btn>
     </v-app-bar>
 
