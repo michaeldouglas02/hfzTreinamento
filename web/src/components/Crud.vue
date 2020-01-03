@@ -7,11 +7,13 @@
     :search-panel="pesquisa"
     :columns="columns"
     :show-borders="true"
+    color="teal"
     :on-toolbar-preparing="toolbarPreparing"
     @selection-changed="onSelectionChanged"
   >
      <DxMasterDetail
       :enabled="mestreDetalhe !== null"
+      :aria-expanded="true"
       template="mestreDetalheTemplate"
     />
     <template #mestreDetalheTemplate="{ data }">

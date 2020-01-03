@@ -32,13 +32,13 @@ export default {
   },
   data () {
     return {
-      views: ['agenda'],
+      views: ['agenda', 'week'],
       currentDate: new Date(2019, 11, 29),
       resourcesData: [
         {
           text: 'Pagamentos',
           id: 1,
-          color: '#054f77'
+          color: 'teal'
         },
         {
           text: 'Vencimentos',

@@ -13,25 +13,25 @@ const routes = [
   {
     path: '/fornecedores',
     name: 'Fornecedores',
-    icon: 'mdi-message',
+    icon: 'mdi-codepen',
     component: () => import('@/views/Fornecedores.vue')
   },
   {
     path: '/contas',
     name: 'Contas',
-    icon: 'mdi-history',
+    icon: 'mdi-code-tags',
     component: () => import('@/views/Contas.vue')
   },
   {
     path: '/titulos',
     name: 'Títulos',
-    icon: 'mdi-settings',
+    icon: 'mdi-apps',
     component: () => import('@/views/Titulos.vue')
   },
   {
     path: '/pagamentos',
     name: 'Pagamentos',
-    icon: 'mdi-keyboard',
+    icon: 'mdi-cellphone-link',
     component: () => import('@/views/Pagamentos.vue')
   }
 ]

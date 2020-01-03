@@ -22,7 +22,7 @@
     <DxSeries
       value-field="gasto"
       name="Gastos"
-      color="#054f77"
+      color="teal"
       :corner-radius= 10
     />
     <DxSeries

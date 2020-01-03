@@ -84,6 +84,11 @@ export default {
       if (!this.titulo) return false
       return this.titulo.saldo >= e.value
     },
+    validaSaldo (e) {
+      if (e.value === null) return true
+      const conta = this.$store.state.contas.filter(f => f.id === e.value)[0]
+      return conta.saldo - this.formData.valor >= 0
+    },
     async carregar () {
       this.titulo = null
       await this.$store.dispatch('loadContas')
@@ -101,7 +106,7 @@ export default {
         this.carregar()
         this.instancia.resetValues()
         this.modal = false
-        notify('Pagamento efetuado', 'success', 3000)
+        notify('Pagamento efetuado com sucesso... Agradecemos a preferência : )', 'success', 5000)
       } catch (err) {
         notify(`Erro ao salvar o pagamento. ${err}.`, 'error', 5000)
       }
@@ -128,7 +133,12 @@ export default {
             readOnly: true
           },
           validationRules: [
-            { type: 'required', message: 'O título é obrigatório' }
+            { type: 'required', message: 'A conta é obrigatório' },
+            {
+              type: 'custom',
+              message: 'Ahhh infelizmente a conta selecionada não possui saldo suficiente :(',
+              validationCallback: this.validaSaldo
+            }
           ],
           colSpan: 2
         },

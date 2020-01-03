@@ -11,7 +11,7 @@
      :shared="true"
     />
      <DxSeries
-      color="#054f77"
+      color="teal"
       :corner-radius= 10
       type="bar"
       />

@@ -1,6 +1,9 @@
 <template>
   <v-app id="app">
     <v-navigation-drawer
+      :dark="false"
+      :touchless="true"
+      color="rgb(238, 238, 238)"
       v-model="drawer"
       :clipped="$vuetify.breakpoint.lgAndUp"
       app
@@ -30,7 +33,7 @@
     <v-app-bar
       :clipped-left="$vuetify.breakpoint.lgAndUp"
       app
-      color="blue darken-3"
+      color="teal"
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
@@ -40,7 +43,7 @@
         <span class="hidden-sm-and-down">Hifuzion Financeiro</span>
       </v-toolbar-title>
       <v-spacer />
-      <v-btn icon>
+      <v-btn icon  >
         <v-icon>mdi-help-circle</v-icon>
       </v-btn>
     </v-app-bar>
@@ -54,6 +57,7 @@
 </template>
 
 <script>
+
 export default {
   data () {
     return {
