@@ -133,12 +133,7 @@ export default {
             readOnly: true
           },
           validationRules: [
-            { type: 'required', message: 'A conta é obrigatório' },
-            {
-              type: 'custom',
-              message: 'Ahhh infelizmente a conta selecionada não possui saldo suficiente :(',
-              validationCallback: this.validaSaldo
-            }
+            { type: 'required', message: 'O título é obrigatório' }
           ],
           colSpan: 2
         },
@@ -184,7 +179,12 @@ export default {
             displayExpr: 'descricao'
           },
           validationRules: [
-            { type: 'required', message: 'A conta é obrigatório' }
+            { type: 'required', message: 'A conta é obrigatório' },
+            {
+              type: 'custom',
+              message: 'Ahhh infelizmente a conta selecionada não possui saldo suficiente :(',
+              validationCallback: this.validaSaldo
+            }
           ],
           colSpan: 1
         },
